@@ -1,0 +1,16 @@
+version: '3.9'
+
+services:
+  rrvideo:
+    container_name: rrvideo
+    image: 2930007061/rrvideo:latest
+    command:
+      - /app/rrweb/packages/rrvideo/build/cli.js
+      - --input
+      - /app/data/events.json
+      - --output
+      - /app/data/output.mp4
+    environment:
+      - LANG=C.UTF-8
+    volumes:
+      - ./data:/app/data
